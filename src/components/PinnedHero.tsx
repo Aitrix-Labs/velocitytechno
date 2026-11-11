@@ -64,6 +64,7 @@ export default function PinnedHero() {
       gsap.set(title, { autoAlpha: 1 })
       if (hint) gsap.set(hint, { autoAlpha: 1 })
       gsap.set(parallax, { yPercent: 0 })
+      gsap.set(stage, { backgroundColor: '#ffffff' })
       gsap.set(media, { scale: 1, borderRadius: 24, opacity: 1 })
       gsap.set(stack, { autoAlpha: 0, scale: 0.92, rotateX: 28 })
       gsap.set(panes, { opacity: 0, y: 40 })
@@ -82,7 +83,8 @@ export default function PinnedHero() {
 
       const morphTL = gsap.timeline({ paused: true })
       morphTL
-        // Video collapses into the 3D stack (Scale uTransition1 stand-in).
+        // White letterbox → black stage as the video morphs into the stack.
+        .to(stage, { backgroundColor: '#000000', ease: 'none', duration: 0.08 }, 0)
         .to(media, { scale: 0.9, borderRadius: 16, opacity: 0, ease: 'power2.inOut', duration: 0.14 }, 0)
         .to(stack, { autoAlpha: 1, scale: 1, rotateX: 0, ease: 'power2.inOut', duration: 0.16 }, 0.02)
         .to(panes, { opacity: 1, y: 0, stagger: 0.03, ease: 'power2.out', duration: 0.14 }, 0.04)
@@ -149,6 +151,15 @@ export default function PinnedHero() {
           <div ref={mediaRef} className="hero-media-frame">
             <HeroVideo />
             <div className="hero-shade" aria-hidden="true" />
+            <div ref={titleRef} className="hero-title-layer">
+              <h1 className="hero-title">{hero.title}</h1>
+            </div>
+            <div ref={hintRef} className="hero-hint">
+              <p className="hero-scroll-label">Scroll to explore</p>
+              <button type="button" className="hero-scroll" aria-label="Scroll to content" onClick={scrollNext}>
+                <ArrowDown />
+              </button>
+            </div>
           </div>
 
           <div ref={stackRef} className="hero-morph-stack" aria-hidden="true">
@@ -156,17 +167,6 @@ export default function PinnedHero() {
             <div className="morph-pane pane-a" />
             <div className="morph-pane pane-b" />
             <div className="morph-pane pane-c" />
-          </div>
-
-          <div ref={titleRef} className="hero-title-layer">
-            <h1 className="hero-title">{hero.title}</h1>
-          </div>
-
-          <div ref={hintRef} className="hero-hint">
-            <p className="hero-scroll-label">Scroll to explore</p>
-            <button type="button" className="hero-scroll" aria-label="Scroll to content" onClick={scrollNext}>
-              <ArrowDown />
-            </button>
           </div>
 
           <div

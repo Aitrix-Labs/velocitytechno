@@ -41,10 +41,12 @@ export default function HomePage() {
               if (Math.abs(dist) > 1) return null
               const active = dist === 0
               return (
-                <article
+                <Link
                   key={item.id}
+                  to="/solutions/enterprise"
                   className={`case-card${active ? ' is-active' : ''}${dist < 0 ? ' is-prev' : ''}${dist > 0 ? ' is-next' : ''}`}
                   aria-hidden={!active}
+                  tabIndex={active ? 0 : -1}
                 >
                   <div className="case-media">
                     <img src={item.image} alt="" />
@@ -53,7 +55,7 @@ export default function HomePage() {
                     <h3>{item.title}</h3>
                     <p className="case-client">{item.client}</p>
                   </div>
-                </article>
+                </Link>
               )
             })}
           </div>

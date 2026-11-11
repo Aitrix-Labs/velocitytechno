@@ -1,12 +1,9 @@
 export function LogoMark({ className }: { className?: string }) {
-  // Scale-like geometric mark: tilted square with cut
+  // Scale-inspired dual chevron mark (original VelocityTechno mark)
   return (
     <svg className={className} viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path
-        d="M6.2 18.8 L14 5.4 L21.8 18.8 L17.6 18.8 L14 12.2 L10.4 18.8 Z"
-        fill="currentColor"
-      />
-      <path d="M8.8 21.2 H19.2" stroke="currentColor" strokeWidth="2.2" strokeLinecap="square" />
+      <path d="M4 8.5 L14 3.2 L14 10.8 L4 16.1 Z" fill="currentColor" />
+      <path d="M14 17.2 L24 11.9 L24 19.5 L14 24.8 Z" fill="currentColor" />
     </svg>
   )
 }

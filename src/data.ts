@@ -156,25 +156,49 @@ export const caseStudies = [
     id: 'defense',
     title: 'Turning raw, classified data into actionable intelligence.',
     client: 'CDAO',
-    image: asset('images/cases/defense.jpg'),
+    image: asset('images/case-defense.jpg'),
   },
   {
     id: 'meta',
-    title: 'Partnering to accelerate frontier LLM and Generative AI.',
+    title: "Partnering to accelerate Meta's LLM and Generative AI.",
     client: 'Meta',
-    image: asset('images/cases/meta.jpg'),
+    image: asset('images/case-finance.jpg'),
   },
   {
     id: 'health',
     title: 'Reducing physician cognitive load by turning complex patient records into clinical intelligence.',
     client: 'Mayo Clinic',
-    image: asset('images/cases/health.jpg'),
+    image: asset('images/case-health.jpg'),
   },
   {
     id: 'media',
     title: 'Powering an interactive AI experience that brings a century of journalism to life.',
     client: 'Time',
-    image: asset('images/cases/media.jpg'),
+    image: asset('images/case-media.jpg'),
+  },
+  {
+    id: 'realestate',
+    title: 'Accelerating real estate development revenue and operations.',
+    client: 'Howard Hughes',
+    image: asset('images/case-energy.jpg'),
+  },
+  {
+    id: 'robotics',
+    title: 'Fuelling the next generation of robotic foundation models with real-world training data.',
+    client: 'Physical Intelligence',
+    image: asset('images/case-robot.jpg'),
+  },
+  {
+    id: 'industrial',
+    title: 'Enabling scalable, real-world Physical AI for industrial robotics.',
+    client: 'Universal Robots',
+    image: asset('images/cases/robot.jpg'),
+  },
+  {
+    id: 'safety',
+    title: 'Benchmarking the frontier of AI capability with expert-level evaluations.',
+    client: 'Center for AI Safety',
+    image: asset('images/bench-board.jpg'),
   },
   {
     id: 'energy',
@@ -183,16 +207,23 @@ export const caseStudies = [
     image: asset('images/cases/energy.jpg'),
   },
   {
-    id: 'robotics',
-    title: 'Fuelling the next generation of robotic foundation models with real-world training data.',
-    client: 'Physical Intelligence',
-    image: asset('images/cases/robot.jpg'),
+    id: 'edu',
+    title: 'Enabling smarter, more personalized learning experiences for students and educators at scale.',
+    client: 'Cengage',
+    image: asset('images/cases/media.jpg'),
+  },
+  {
+    id: 'pe',
+    title: 'Building agentic AI that drives EBITDA gains across PE portfolio companies.',
+    client: 'Shore Capital',
+    image: asset('images/case-finance.jpg'),
   },
 ]
 
 export const industries = [
   { name: 'Artificial Intelligence', image: asset('images/industries/ai.jpg') },
-  { name: 'Real Research', image: asset('images/industries/ai.jpg') },
+  { name: 'Real', image: asset('images/industries/ai.jpg') },
+  { name: 'Research', image: asset('images/industries/ai.jpg') },
   { name: 'Life Science', image: asset('images/industries/medicine.jpg') },
   { name: 'Medicine', image: asset('images/industries/medicine.jpg') },
   { name: 'Energy', image: asset('images/industries/energy.jpg') },
@@ -211,20 +242,20 @@ export const benchmarks = {
   items: [
     {
       title: '10 years powering the world’s biggest AI breakthroughs.',
-      body: 'Since 2016, we’ve been at the forefront — from autonomous vehicles to frontier models solving the world’s hardest problems.',
-      image: asset('images/cases/defense.jpg'),
+      body: 'Since 2016, we’ve been at the forefront; from autonomous vehicles to frontier models solving the world’s hardest problems.',
+      image: asset('images/bench-years.jpg'),
       to: '/company/about',
     },
     {
       title: 'The standard every frontier model is measured against.',
       body: 'Our leaderboards run private benchmarks for the most ambitious AI companies to improve model capabilities.',
-      image: asset('images/news-1.jpg'),
+      image: asset('images/bench-board.jpg'),
       to: '/products/genai',
     },
     {
       title: 'Behind the model. Behind the mission. Behind it all.',
       body: 'Only VelocityTechno has the frontier research, world’s best data, and deployment experience to build AI that works in the real world.',
-      image: asset('images/cases/meta.jpg'),
+      image: asset('images/bench-mission.jpg'),
       to: '/solutions/enterprise',
     },
   ],
@@ -236,24 +267,48 @@ export const news = {
     {
       title: 'Introducing VelocityTechno Labs',
       category: 'Company',
-      image: asset('images/news-1.jpg'),
+      image: asset('images/news-labs.jpg'),
       to: '/blog',
     },
     {
       title: 'Mayo Clinic + VelocityTechno: Reliable AI for Better Healthcare',
       category: 'Healthcare',
-      image: asset('images/news-2.jpg'),
+      image: asset('images/news-health.jpg'),
       to: '/blog',
     },
     {
       title: 'How enterprises deploy AI that actually works (hint: it’s evals)',
       category: 'Company',
-      image: asset('images/news-3.jpg'),
+      image: asset('images/news-evals.jpg'),
       to: '/blog',
     },
     {
       title: 'The Next Phase of AI Policy: Governance, Implementation, and Leadership',
       category: 'Public Sector',
+      image: asset('images/news-policy.jpg'),
+      to: '/blog',
+    },
+    {
+      title: 'VelocityTechno and partners combine forces to modernize the tactical edge',
+      category: 'Public Sector',
+      image: asset('images/news-1.jpg'),
+      to: '/blog',
+    },
+    {
+      title: 'SWE-Bench Pro: Raising the Bar for Agentic Coding',
+      category: 'Research',
+      image: asset('images/news-2.jpg'),
+      to: '/blog',
+    },
+    {
+      title: 'Paving the Way for Digital Future with national AI programs',
+      category: 'Company',
+      image: asset('images/news-3.jpg'),
+      to: '/blog',
+    },
+    {
+      title: 'Expanding Our Data Engine for Physical AI',
+      category: 'Product',
       image: asset('images/news-4.jpg'),
       to: '/blog',
     },
@@ -279,9 +334,11 @@ export const footerColumns = [
     title: 'Solutions',
     links: [
       { to: '/solutions/enterprise', label: 'Enterprise' },
+      { to: '/solutions/healthcare', label: 'Insurance' },
       { to: '/solutions/healthcare', label: 'Healthcare' },
       { to: '/solutions/national-security', label: 'National Security' },
       { to: '/solutions/public-sector', label: 'US Public Sector' },
+      { to: '/solutions/public-sector', label: 'Global Public Sector' },
     ],
   },
   {
@@ -299,7 +356,9 @@ export const footerColumns = [
     links: [
       { to: '/blog', label: 'Blog' },
       { to: '/contact', label: 'Contact Us' },
+      { to: '/resources', label: 'Events' },
       { to: '/resources', label: 'Documentation' },
+      { to: '/resources', label: 'Brand Guidelines' },
     ],
   },
   {
@@ -307,8 +366,9 @@ export const footerColumns = [
     links: [
       { to: '/resources', label: 'Data Labeling' },
       { to: '/resources', label: 'ML Model Training' },
+      { to: '/resources', label: 'Diffusion Models' },
       { to: '/resources', label: 'Large Language Models' },
-      { to: '/resources', label: 'Computer Vision' },
+      { to: '/resources', label: 'Computer Vision Applications' },
     ],
   },
 ]

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import ContactForm from '../components/ContactForm'
 import { products, solutions } from '../data'
 
 function PageShell({
@@ -155,39 +156,32 @@ export function ResourcesPage() {
 
 export function ContactPage() {
   return (
-    <PageShell
-      eyebrow="Contact"
-      title="Book a demo"
-      body="Tell us about your mission. We’ll show how VelocityTechno builds reliable AI for your organization."
-    >
-      <form
-        className="contact-form"
-        onSubmit={(e) => {
-          e.preventDefault()
-          alert('Thanks — our team will follow up shortly.')
-        }}
-      >
-        <label>
-          Name
-          <input name="name" required placeholder="Your name" />
-        </label>
-        <label>
-          Work email
-          <input name="email" type="email" required placeholder="you@company.com" />
-        </label>
-        <label>
-          Company
-          <input name="company" placeholder="Organization" />
-        </label>
-        <label>
-          How can we help?
-          <textarea name="message" rows={4} placeholder="Tell us about your use case" />
-        </label>
-        <button type="submit" className="btn btn-dark">
-          Submit
-        </button>
-      </form>
-    </PageShell>
+    <section className="contact-page">
+      <div className="contact-layout">
+        <div className="contact-copy">
+          <h1>Let’s build together</h1>
+          <p className="lead">
+            Join leading enterprises partnering with VelocityTechno. Book a 1:1 intro call with us to
+            get started.
+          </p>
+          <ContactForm />
+        </div>
+        <aside className="contact-aside" aria-label="Customer perspective">
+          <blockquote className="contact-quote">
+            <p>
+              We’re going to need a lot more investment in high-quality evals and benchmarks to help
+              us understand the actual comparative utility of the various models. Private evals and
+              leaderboards from partners like VelocityTechno are essential.
+            </p>
+            <footer>
+              <strong>Field leaders</strong>
+              <span>Enterprise AI &amp; evaluation teams</span>
+            </footer>
+          </blockquote>
+          <p className="contact-trusted">Trusted by teams deploying AI where outcomes matter</p>
+        </aside>
+      </div>
+    </section>
   )
 }
 

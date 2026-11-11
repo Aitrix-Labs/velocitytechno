@@ -69,9 +69,9 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <Link to="/contact" className="btn btn-login" onClick={() => setOpenMenu(null)}>
+          <button type="button" className="btn btn-login" onClick={() => setOpenMenu(null)}>
             Log In
-          </Link>
+          </button>
           <Link to="/contact" className="btn btn-started" onClick={() => setOpenMenu(null)}>
             Get Started
           </Link>
@@ -136,9 +136,14 @@ export default function Header() {
               )}
             </div>
           ))}
-          <Link to="/contact" className="btn btn-started mobile-cta" onClick={() => setMobileOpen(false)}>
-            Get Started
-          </Link>
+          <div className="mobile-actions">
+            <button type="button" className="btn btn-login" onClick={() => setMobileOpen(false)}>
+              Log In
+            </button>
+            <Link to="/contact" className="btn btn-started mobile-cta" onClick={() => setMobileOpen(false)}>
+              Get Started
+            </Link>
+          </div>
         </div>
       ) : null}
     </header>
