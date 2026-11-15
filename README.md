@@ -7,4 +7,4 @@ npm install
 npm run dev
 ```
 
-Build: `npm run build` (GitHub Pages base `/velocitytechno/`).
+Build: `npm run build` (custom domain root base `/`).

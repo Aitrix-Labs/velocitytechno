@@ -16,7 +16,7 @@ import {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/velocitytechno">
+    <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
